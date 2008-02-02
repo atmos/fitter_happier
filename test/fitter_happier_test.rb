@@ -1,4 +1,3 @@
-# require 'test/unit'
 ENV['RAILS_ENV'] = 'test'
 require '../../../../test/test_helper'
 

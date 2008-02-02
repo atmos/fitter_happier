@@ -1,7 +1,7 @@
 FitterHappier
 =============
 
-This is an insanely silly plugin given its simplicity, but I keep telling EY customers the same thing over and over.  This is a plugin you simply install and you get a controller added that's perfect for setting up as a heartbeat.  A lot of people would give us their landing page and 
+This is an insanely silly plugin given its simplicity, but I keep telling EY customers the same thing over and over.  This is a plugin you install that provides a controller that's perfect for monitoring mongrel availability.  A lot of people would give us their landing page and that blocks mongrels longer than needed.  This disables sessions, layouts, and logging while rendering a simple string you can checksum against.
 
 Installation
 ============

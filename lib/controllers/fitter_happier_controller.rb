@@ -3,8 +3,16 @@ class FitterHappierController < ActionController::Base
   layout nil
 
   def index
+    render :text => 'Hai!' and return
+  end
+  
+  private
+  
+  def process_with_silence(*args)
     logger.silence do
-      render :text => 'Hai!' and return
+      process_without_silence(*args)
     end
   end
+ 
+  alias_method_chain :process, :silence
 end

@@ -1,5 +1,5 @@
 ENV['RAILS_ENV'] = 'test'
-require '../../../../test/test_helper'
+require File.dirname(__FILE__)+'/../../../../test/test_helper'
 
 class FitterHappierTest < Test::Unit::TestCase
   def setup

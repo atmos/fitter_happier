@@ -1,0 +1,13 @@
+CHANGELOG
+=========
+
+Version 1.1
+===========
+  * Added 2 additional URIs
+    * /fitter_happier/site_check              => Timestamped site check
+    * /fitter_happier/site_and_database_check => Timestamped site and database check
+  * Updated the response message for /fitter_happier
+
+Version 1.0
+===========
+  * atmos release

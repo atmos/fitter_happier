@@ -1,12 +1,13 @@
 FitterHappier
 =============
 
-This is an insanely silly plugin given its simplicity, but I keep telling EY 
-customers the same thing over and over.  This is a plugin you install that 
-provides a controller that's perfect for monitoring mongrel availability.  A 
-lot of people would give us their landing page and that blocks mongrels longer 
-than needed.  This disables sessions, layouts, and logging while rendering a 
-simple string you can checksum against.
+FitterHappier is a Rails plug-in that provides actions for monitoring site and/or database availability. FitterHappier's monitoring controller disables unnecessary Rails features, like sessions, layouts, and logging, for lightning-fast monitoring URIs.  
+
+FitterHappier provides three monitoring URIs 
+
+  * /fitter_happier                => Non-timestamped site check, useful for checksums
+  * /fitter_happier/site_check     => Timestamped site check
+  * /fitter_happier/database_check => Timestamped site and database check
 
 Installation
 ============
@@ -16,12 +17,16 @@ Installation
 Examples
 ========
 
+  SiteUpTime
+  ==========
+  See EngineYard's support guide on external monitoring
+
   Monit
   =====
 	You can do simple checks with monit like this:
 
 	if failed host 127.0.0.1 port 5000
-	  protocol HTTP request /fitter_happier with checksum 6684951cdf1757cc708898b4ee3526c4 then restart
+	  protocol HTTP request /fitter_happier with checksum 7d617b72cdba532784e62297890cc50b then restart
 
   Keepalived/LVS
   ==============

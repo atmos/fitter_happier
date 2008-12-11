@@ -5,9 +5,9 @@ FitterHappier is a Rails plug-in that provides actions for monitoring site and/o
 
 FitterHappier provides three monitoring URIs 
 
-  * /fitter_happier                => Non-timestamped site check, useful for checksums
-  * /fitter_happier/site_check     => Timestamped site check
-  * /fitter_happier/database_check => Timestamped site and database check
+  * /fitter_happier                         => Non-timestamped site check, useful for checksums
+  * /fitter_happier/site_check              => Timestamped site check
+  * /fitter_happier/site_and_database_check => Timestamped site and database check
 
 Installation
 ============

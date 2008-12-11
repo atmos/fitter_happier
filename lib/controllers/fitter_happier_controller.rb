@@ -1,9 +1,13 @@
 class FitterHappierController < ActionController::Base
   session :off
   layout nil
-
+  
   def index
-    render :text => 'Hai!' and return
+    table_name = (Rails::VERSION::STRING >= '2.1.0' ? 'schema_migrations' : 'schema_info')
+    query      = "SELECT version FROM #{table_name} ORDER BY version DESC LIMIT 1"
+    version    = ActiveRecord::Base.connection.select_value(query)
+    time       = Time.now.to_formatted_s(:rfc822)
+    render(:text => "Mongrel and Database Check Passed @ #{time} -- Schema Version: #{version}")
   end
   
   private

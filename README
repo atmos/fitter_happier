@@ -5,9 +5,15 @@ FitterHappier is a Rails plug-in that provides actions for monitoring site and/o
 
 FitterHappier provides three monitoring URIs 
 
-  * /fitter_happier                         => Non-timestamped site check, useful for checksums
-  * /fitter_happier/site_check              => Timestamped site check
-  * /fitter_happier/site_and_database_check => Timestamped site and database check
+    % curl localhost:3000/fitter_happier
+    FitterHappier Site Check Passed
+
+    % curl localhost:3000/fitter_happier/site_check
+    FitterHappier Site Check Passed @ Wed, 17 Dec 2008 14:27:47 -0800
+
+    % curl localhost:3000/fitter_happier/site_and_database_check
+    FitterHappier Site and Database Check Passed @ Wed, 17 Dec 2008 14:27:57 -0800
+    Schema Version: 20081217141904
 
 Installation
 ============

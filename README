@@ -21,59 +21,59 @@ Installation
     % cd vendor/plugins
     % git clone git@github.com:atmos/fitter_happier.git
 
-Examples
-========
+Uptime Monitoring
+=================
 
-  SiteUpTime
-  ==========
-  See EngineYard's support guide on "uptime monitoring for your rails application":http://www.engineyard.com/support/guides/uptime_monitoring_for_your_rails_application
+See EngineYard's support guide on "uptime monitoring for your rails application":http://www.engineyard.com/support/guides/uptime_monitoring_for_your_rails_application
 
-  Monit
-  =====
-	You can do simple checks with monit like this:
+Monit
+=====
 
-	if failed host 127.0.0.1 port 5000
-	  protocol HTTP request /fitter_happier with checksum 15b8a1ee66d740fbfc00297684bb5430 then restart
+You can do simple checks with monit like this:
 
-  Keepalived/LVS
-  ==============
-	You can also do this in a keepalived/LVS setup:
+    if failed host 127.0.0.1 port 5000
+      protocol HTTP request /fitter_happier with checksum 15b8a1ee66d740fbfc00297684bb5430 then restart
 
-	virtual_server 169.254.y.z 80 {
-	  delay_loop 15
-	  lb_algo lc
-	  lb_kind NAT
-	  nat_mask 255.255.255.0
-	  persistence_timeout 0
-	  protocol TCP
-	  sorry_server 127.0.0.1 80
-	  virtualhost www.myfacetube.com
-	  real_server 10.0.1.34 80 {
-	    weight 1
-	    HTTP_GET {
-	      url {
-	        path /fitter_happier
-	        status_code 200
-	      }
-	      connect_port 80
-	      connect_timeout 5
-	      nb_get_retry 20
-	      delay_before_retry 2
-	    }
-	  }
-	  real_server 10.0.1.35 80 {
-	    weight 1
-	    HTTP_GET {
-	      url {
-	        path /fitter_happier
-	        status_code 200
-	      }
-	      connect_port 80
-	      connect_timeout 5
-	      nb_get_retry 20
-	      delay_before_retry 2
-	    }
-	  }
-	}
+Keepalived/LVS
+==============
+
+You can also do this in a keepalived/LVS setup:
+
+    virtual_server 169.254.y.z 80 {
+      delay_loop 15
+      lb_algo lc
+      lb_kind NAT
+      nat_mask 255.255.255.0
+      persistence_timeout 0
+      protocol TCP
+      sorry_server 127.0.0.1 80
+      virtualhost www.myfacetube.com
+      real_server 10.0.1.34 80 {
+        weight 1
+        HTTP_GET {
+          url {
+            path /fitter_happier
+            status_code 200
+          }
+          connect_port 80
+          connect_timeout 5
+          nb_get_retry 20
+          delay_before_retry 2
+        }
+      }
+      real_server 10.0.1.35 80 {
+        weight 1
+        HTTP_GET {
+          url {
+            path /fitter_happier
+            status_code 200
+          }
+          connect_port 80
+          connect_timeout 5
+          nb_get_retry 20
+          delay_before_retry 2
+        }
+      }
+    }
 
 Copyright (c) 2008 atmos, released under the MIT license

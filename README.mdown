@@ -24,7 +24,7 @@ Installation
 Uptime Monitoring
 =================
 
-See EngineYard's support guide on "uptime monitoring for your rails application":http://www.engineyard.com/support/guides/uptime_monitoring_for_your_rails_application
+See EngineYard's support guide on [uptime monitoring for your rails application](http://www.engineyard.com/support/guides/uptime_monitoring_for_your_rails_application)
 
 Monit
 =====

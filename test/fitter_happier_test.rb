@@ -12,7 +12,9 @@ class FitterHappierTest < Test::Unit::TestCase
     get :index
     assert_response :success
     assert_equal "", @response.session.session_id
-    assert_equal "FitterHappier Site Check Passed", @response.body
+
+    expected_body = "FitterHappier Site Check Passed"
+    assert_match expected_body, @response.body
   end
   
   def test_site_check

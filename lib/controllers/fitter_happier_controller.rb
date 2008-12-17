@@ -3,12 +3,12 @@ class FitterHappierController < ActionController::Base
   layout nil
   
   def index
-    render(:text => "FitterHappier Site Check Passed")
+    render(:text => "FitterHappier Site Check Passed\n")
   end
   
   def site_check
     time = Time.now.to_formatted_s(:rfc822)
-    render(:text => "FitterHappier Site Check Passed @ #{time}")
+    render(:text => "FitterHappier Site Check Passed @ #{time}\n")
   end
   
   def site_and_database_check
@@ -16,7 +16,7 @@ class FitterHappierController < ActionController::Base
     query      = "SELECT version FROM #{table_name} ORDER BY version DESC LIMIT 1"
     version    = ActiveRecord::Base.connection.select_value(query)
     time       = Time.now.to_formatted_s(:rfc822)
-    render(:text => "FitterHappier Site and Database Check Passed @ #{time} -- Schema Version: #{version}")
+    render(:text => "FitterHappier Site and Database Check Passed @ #{time} -- Schema Version: #{version}\n")
   end
   
   private

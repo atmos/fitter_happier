@@ -19,14 +19,14 @@ Examples
 
   SiteUpTime
   ==========
-  See EngineYard's support guide on external monitoring
+  See EngineYard's support guide on "uptime monitoring for your rails application":http://www.engineyard.com/support/guides/uptime_monitoring_for_your_rails_application
 
   Monit
   =====
 	You can do simple checks with monit like this:
 
 	if failed host 127.0.0.1 port 5000
-	  protocol HTTP request /fitter_happier with checksum 7d617b72cdba532784e62297890cc50b then restart
+	  protocol HTTP request /fitter_happier with checksum 15b8a1ee66d740fbfc00297684bb5430 then restart
 
   Keepalived/LVS
   ==============

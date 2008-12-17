@@ -31,7 +31,7 @@ class FitterHappierTest < Test::Unit::TestCase
     assert_response :success
     assert_equal "", @response.session.session_id
     
-    expected_body = %r{FitterHappier Site and Database Check Passed @ [A-z]{3}, \d{2} [A-z]{3} \d{4} \d{2}:\d{2}:\d{2} [0-9\-]+ -- Schema Version: \d+}
+    expected_body = %r{FitterHappier Site and Database Check Passed @ [A-z]{3}, \d{2} [A-z]{3} \d{4} \d{2}:\d{2}:\d{2} [0-9\-]+\nSchema Version: \d+}
     assert_match expected_body, @response.body
   end
   

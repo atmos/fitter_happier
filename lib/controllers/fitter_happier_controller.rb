@@ -16,7 +16,7 @@ class FitterHappierController < ActionController::Base
     query      = "SELECT version FROM #{table_name} ORDER BY version DESC LIMIT 1"
     version    = ActiveRecord::Base.connection.select_value(query)
     time       = Time.now.to_formatted_s(:rfc822)
-    render(:text => "FitterHappier Site and Database Check Passed @ #{time} -- Schema Version: #{version}\n")
+    render(:text => "FitterHappier Site and Database Check Passed @ #{time}\nSchema Version: #{version}\n")
   end
   
   private

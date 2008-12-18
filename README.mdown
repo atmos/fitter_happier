@@ -19,7 +19,7 @@ Installation
 ============
 
     % cd vendor/plugins
-    % git clone git@github.com:atmos/fitter_happier.git
+    % git clone git://github.com/atmos/fitter_happier.git
 
 Uptime Monitoring
 =================

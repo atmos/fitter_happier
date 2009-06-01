@@ -1,7 +1,9 @@
 ENV['RAILS_ENV'] = 'test'
 require File.expand_path(File.dirname(__FILE__) + '/../../../../test/test_helper')
+require 'test_help'
 
-class FitterHappierTest < Test::Unit::TestCase
+class FitterHappierTest < ActionController::TestCase
+  #include ActionController::Assertions::RoutingAssertions
   def setup
     @controller = FitterHappierController.new
     @request    = ActionController::TestRequest.new

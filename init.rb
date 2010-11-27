@@ -4,7 +4,11 @@ controller_path = File.dirname(__FILE__) + '/lib/controllers'
 $LOAD_PATH << controller_path
 
 if defined?(ActiveSupport::Dependencies)
-  ActiveSupport::Dependencies.load_paths << controller_path
+  if Rails::VERSION::MAJOR >= 3
+    ActiveSupport::Dependencies.autoload_paths << controller_path
+  else
+    ActiveSupport::Dependencies.load_paths << controller_path
+  end
 else
   Dependencies.load_paths << controller_path
 end

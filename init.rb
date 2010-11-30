@@ -12,4 +12,9 @@ if defined?(ActiveSupport::Dependencies)
 else
   Dependencies.load_paths << controller_path
 end
-config.controller_paths << controller_path
+
+if Rails::VERSION::MAJOR >= 3
+  paths.app.controllers << controller_path
+else
+  config.controller_paths << controller_path
+end
